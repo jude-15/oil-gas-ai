@@ -894,7 +894,7 @@ docs/images/dashboard-overview.png
 ```
 
 ### Well Risk Monitoring
-
+![Well Risk Monitoring](docs/images/well-risk-monitoring.png)
 ```text
 docs/images/well-risk-monitoring.png
 ```
