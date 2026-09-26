@@ -906,7 +906,7 @@ docs/images/failure-prediction.png
 ```
 
 ### SHAP Explainability
-
+![SHAP Explainability](docs/images/shap-explainability.png)
 ```text
 docs/images/shap-analysis.png
 ```
