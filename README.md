@@ -888,7 +888,7 @@ Add screenshots of the application here.
 Suggested screenshots:
 
 ### System Overview
-
+![Oil & Gas AI Dashboard Overview](docs/images/dashboard-overview.png)
 ```text
 docs/images/dashboard-overview.png
 ```
