@@ -1,0 +1,20 @@
+venv/
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE
+.vscode/
+
+# Python
+*.egg-info/
+
+# Generated data
+data/processed/
+
+# Local database files
+*.db
+
+# Logs
+*.log

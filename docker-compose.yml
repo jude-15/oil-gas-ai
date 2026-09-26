@@ -1,0 +1,78 @@
+services:
+
+  postgres:
+    image: postgres:18
+    container_name: oil_gas_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: oil_gas_ai
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+
+    container_name: oil_gas_api
+    restart: unless-stopped
+
+    depends_on:
+      - postgres
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: oil_gas_ai
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./src:/app/src
+
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+
+    container_name: oil_gas_dashboard
+    restart: unless-stopped
+
+    depends_on:
+      - api
+
+    ports:
+      - "8501:8501"
+
+    environment:
+      API_URL: http://api:8000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: oil_gas_ai
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./dashboard:/app/dashboard
+      - ./src:/app/src
+
+
+volumes:
+
+  postgres_data:
