@@ -918,7 +918,7 @@ docs/images/postgresql-intelligence.png
 ```
 
 ### FastAPI Documentation
-
+![FastAPI Documentation](docs/images/fastapi-docs.png)
 ```text
 docs/images/fastapi-docs.png
 ```
