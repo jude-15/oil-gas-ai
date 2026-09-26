@@ -900,7 +900,7 @@ docs/images/well-risk-monitoring.png
 ```
 
 ### Failure Prediction
-
+![AI Failure Prediction](docs/images/failure-prediction.png)
 ```text
 docs/images/failure-prediction.png
 ```
